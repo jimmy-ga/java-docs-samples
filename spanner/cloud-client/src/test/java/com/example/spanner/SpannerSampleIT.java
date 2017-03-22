@@ -78,6 +78,8 @@ public class SpannerSampleIT {
 
     runSample("write");
 
+    Thread.sleep(1000);
+
     out = runSample("read");
     assertThat(out).contains("1 1 Total Junk");
 
@@ -89,11 +91,15 @@ public class SpannerSampleIT {
 
     runSample("writetransaction");
 
+    Thread.sleep(1000);
+
     out = runSample("querymarketingbudget");
     assertThat(out).contains("1 1 300000");
     assertThat(out).contains("2 2 300000");
 
     runSample("addindex");
+    Thread.sleep(1000);
+
     out = runSample("queryindex");
     assertThat(out).contains("Go, Go, Go");
     assertThat(out).contains("Forever Hold Your Peace");
@@ -105,6 +111,8 @@ public class SpannerSampleIT {
     assertThat(out).contains("Green");
 
     runSample("addstoringindex");
+    Thread.sleep(1000);
+
     out = runSample("readstoringindex");
     assertThat(out).contains("300000");
 
